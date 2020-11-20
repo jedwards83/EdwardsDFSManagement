@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EdwardsManagement
 {
-    public class Players
+    public class Player
     {
         public string FirstName { get; set; }
 

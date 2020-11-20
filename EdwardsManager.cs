@@ -16,14 +16,14 @@ namespace EdwardsManagement
                 var json = File.ReadAllText(path);
                 try
                 {
-                    _players = JsonConvert.DeserializeObject<List<Players>>(json);
+                    _players = JsonConvert.DeserializeObject<List<Player>>(json);
                 }
                 catch
                 {
                 }
             }
         }
-        private List<Players> _players = new List<Players>();
+        private List<Player> _players = new List<Player>();
 
         public void SavePlayers(string path)
         {
@@ -33,29 +33,33 @@ namespace EdwardsManagement
         }
         public int GetNextPlayerSalary()
         {
-        var lastPlayerSalary = 0;
-            if (_players.Any())
-                lastPlayerSalary = _players.Max(p => p.Salary);
-
-            return lastPlayerSalary;
+            Console.WriteLine("How much does the player cost?");
+            var playerSalary = Convert.ToInt32(Console.ReadLine());
+            
+            return playerSalary;
         }
 
-        public void AddNewPlayer(Players contactToAdd)
+        public void AddNewPlayer(Player playerToAdd)
         {
-            _players.Add(contactToAdd);
+            if (playerToAdd is null)
+            {
+                throw new ArgumentNullException(nameof(playerToAdd));
+            }
+
+            _players.Add(playerToAdd);
         }
 
-        public Players LoadPlayerBySalary(int playerSalary)
+        public Player LoadPlayerBySalary(int playerSalary)
         {
             return _players.Where(p => p.Salary == playerSalary).SingleOrDefault();
         }
 
-        public List<Players> FindByName(string nameToSearch)
+        public List<Player> FindByName(string nameToSearch)
         {
             return _players.Where(p => p.FirstName.Contains(nameToSearch) || p.LastName.Contains(nameToSearch)).ToList();
         }
 
-        public List<Players> GetAllContacts()
+        public List<Player> GetAllPlayers()
         {
             return _players.ToList();
         }
