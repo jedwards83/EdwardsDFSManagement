@@ -24,15 +24,15 @@ namespace EdwardsManagement
                 //menu options
                 //exit
                 Console.WriteLine("0. Exit Player Manager");
-                //list playes
+                //list all active players
                 Console.WriteLine("1. List all players");
-                //search players
+                //search players by name
                 Console.WriteLine("2. Search by name");
-                //view player
+                //view player by salary
                 Console.WriteLine("3. Search by Salary");
-                //add player
+                //add players to the list
                 Console.WriteLine("4. Add new Player");
-                //Find By Max Salary
+                //Find By Max Salary so that when building lineups people can filter out players that exceed salary limitations
                 Console.WriteLine("5. Find all Below Salary");
 
                 var action = Console.ReadLine();
