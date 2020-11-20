@@ -2,6 +2,62 @@
   {
     "FirstName": "Kyler",
     "LastName": "Murray",
-    "Salary":  19500
+    "Salary": 19500
+  },
+  {
+    "FirstName": "DeAndre",
+    "LastName": "Hopkins",
+    "Salary": 16200
+  },
+  {
+    "FirstName": "Russell",
+    "LastName": "Wilson",
+    "Salary": 17700
+  },
+  {
+    "FirstName": "DK",
+    "LastName": "Metcalf",
+    "Salary": 15300
+  },
+  {
+    "FirstName": "Tyler",
+    "LastName": "Lockett",
+    "Salary": 14100
+  },
+  {
+    "FirstName": "Christian",
+    "LastName": "Kirk",
+    "Salary": 11100
+  },
+  {
+    "FirstName": "Carlos",
+    "LastName": "Hyde",
+    "Salary": 7800
+  },
+  {
+    "FirstName": "Kenyan",
+    "LastName": "Drake",
+    "Salary": 9300
+  },
+  {
+    "FirstName": "Chase",
+    "LastName": "Edmonds",
+    "Salary": 8400
+  },
+  {
+    "FirstName": "David",
+    "LastName": "Moore",
+    "Salary": 7200
+  },
+  {
+    "FirstName": "Jason",
+    "LastName": "Myers",
+    "Salary": 6000
+  },
+  {
+    "FirstName": "Larry",
+    "LastName": "Fitzgerald",
+    "Salary": 6600
   }
+
 ]

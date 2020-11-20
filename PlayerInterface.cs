@@ -75,8 +75,7 @@ namespace EdwardsManagement
                         }
                 }
             }
-            //end loop
-
+            
             _edwardsManager.SavePlayers(path);
         }
         private void ListAllPlayers()
@@ -86,6 +85,7 @@ namespace EdwardsManagement
                 Console.WriteLine(player.ToString());
             }
         }
+        //interface to Search by either first, last, or full name
         private void StartSearchInterface()
         {
             Console.WriteLine("What name do you want to search for?");
@@ -99,6 +99,7 @@ namespace EdwardsManagement
                 Console.WriteLine(player.ToString());
             }
         }
+        //verifies naming syntax
         private bool LastNameIsValid(string lastName)
         {
             if (string.IsNullOrWhiteSpace(lastName))
@@ -119,6 +120,7 @@ namespace EdwardsManagement
 
             return true;
         }
+        //Add Players to Console
         private void StartAddPlayerInterface()
         {
             string firstName = null;
@@ -148,7 +150,7 @@ namespace EdwardsManagement
             _edwardsManager.AddNewPlayer(playerToAdd);
         }
 
-
+        //Searches by Player Salary
         private void StartPlayerLoadInterface()
         {
             Console.WriteLine("What is the Salary of the user to load?");
@@ -177,6 +179,7 @@ namespace EdwardsManagement
                 Console.WriteLine($"Invalid player Salary {playerSalary}");
             }
         }
+        //Search player name
         private void StartSearchPlayerUserInterface()
         {
             Console.WriteLine("What Player do you want to search for?");
@@ -190,6 +193,7 @@ namespace EdwardsManagement
                 Console.WriteLine(player.ToString());
             }
         }
+        //search players MaxSalary
         private void StartSearchSalaryMax()
         {
             Console.WriteLine("What is the max Salary you are able to use?");
