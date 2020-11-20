@@ -24,14 +24,16 @@ namespace EdwardsManagement
                 //menu options
                 //exit
                 Console.WriteLine("0. Exit Player Manager");
-                //list contacts
+                //list playes
                 Console.WriteLine("1. List all players");
-                //search contacts
+                //search players
                 Console.WriteLine("2. Search by name");
-                //view contact
+                //view player
                 Console.WriteLine("3. Search by Salary");
-                //add contact
-                Console.WriteLine("4. Find all Below Salary");
+                //add player
+                Console.WriteLine("4. Add new Player");
+                //Find By Max Salary
+                Console.WriteLine("5. Find all Below Salary");
 
                 var action = Console.ReadLine();
                 switch (action)
@@ -61,6 +63,11 @@ namespace EdwardsManagement
                             StartAddPlayerInterface();
                             break;
                         }
+                    case "5":
+                        {
+                            StartSearchSalaryMax();
+                            break;
+                        }
                     default:
                         {
                             Console.WriteLine($"Invalid Entry {action}");
@@ -74,9 +81,9 @@ namespace EdwardsManagement
         }
         private void ListAllPlayers()
         {
-            foreach (var contact in _edwardsManager.GetAllPlayers())
+            foreach (var player in _edwardsManager.GetAllPlayers())
             {
-                Console.WriteLine(contact.ToString());
+                Console.WriteLine(player.ToString());
             }
         }
         private void StartSearchInterface()
@@ -87,9 +94,9 @@ namespace EdwardsManagement
             var foundPlayers = _edwardsManager.FindByName(nameToSearch);
 
             Console.WriteLine($"{foundPlayers.Count()} player(s) found");
-            foreach (var contact in foundPlayers)
+            foreach (var player in foundPlayers)
             {
-                Console.WriteLine(contact.ToString());
+                Console.WriteLine(player.ToString());
             }
         }
         private bool LastNameIsValid(string lastName)
@@ -182,6 +189,20 @@ namespace EdwardsManagement
             {
                 Console.WriteLine(player.ToString());
             }
+        }
+        private void StartSearchSalaryMax()
+        {
+            Console.WriteLine("What is the max Salary you are able to use?");
+            var playerMaxSalary = Convert.ToInt32(Console.ReadLine());
+
+            var salaryCap = _edwardsManager.FindByMaxSalary(playerMaxSalary);
+
+            Console.WriteLine($"{salaryCap.Count()} players(s) found");
+            foreach (var player in salaryCap)
+            {
+                Console.WriteLine(player.ToString());
+            }
+
         }
     }
 }

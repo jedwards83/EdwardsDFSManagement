@@ -63,6 +63,10 @@ namespace EdwardsManagement
         {
             return _players.ToList();
         }
+        public List<Player> FindByMaxSalary(int playerMaxSalary)
+        {
+            return _players.Where(p => p.Salary <= (playerMaxSalary)).ToList();
+        }
 
     }
 }
